@@ -5,7 +5,7 @@ import utlis
  
 ########################################################################
 webCamFeed = True
-pathImage = "r_13.jpg"
+pathImage = "cardvisit1.jpg"
 cap = cv2.VideoCapture(0)
 cap.set(10,160)
 heightImg = 640
