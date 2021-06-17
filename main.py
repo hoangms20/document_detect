@@ -5,11 +5,11 @@ import utlis
  
 ########################################################################
 webCamFeed = True
-pathImage = "cardvisit1.jpg"
+pathImage = "r_11.jpg"
 cap = cv2.VideoCapture(0)
 cap.set(10,160)
-heightImg = 640
-widthImg  = 480
+heightImg = 865
+widthImg  = 450
 ########################################################################
  
 utlis.initializeTrackbars()
@@ -25,6 +25,7 @@ while True:
     imgBlur = cv2.GaussianBlur(imgGray, (5, 5), 1) # ADD GAUSSIAN BLUR
     thres=utlis.valTrackbars() # GET TRACK BAR VALUES FOR THRESHOLDS
     imgThreshold = cv2.Canny(imgBlur,thres[0],thres[1]) # APPLY CANNY BLUR
+    img2 = cv2.Canny(img,thres[0],thres[1])
     kernel = np.ones((5, 5))
     imgDial = cv2.dilate(imgThreshold, kernel, iterations=2) # APPLY DILATION
     imgThreshold = cv2.erode(imgDial, kernel, iterations=1)  # APPLY EROSION
